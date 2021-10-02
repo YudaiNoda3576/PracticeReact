@@ -1,6 +1,10 @@
 function App() {
+
   return (
-        <h1>HelloWorld</h1>
+    <div>
+      <label　htmlFor="bar">bar</label>
+      <input type="text" onClick={()=> {alert('I am clicked!')}}/>
+    </div>
   );
 }
 
