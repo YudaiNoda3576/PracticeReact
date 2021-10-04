@@ -4,9 +4,14 @@ const initialState = {value: 0}
 
 export default(state = initialState, action) => {
     switch(action.type){
-        case INCREMEMT: 
-            return {value: state.value + 1};
+        case INCREMENT: 
+            return {value: state.value + 1}
+        break;
         case DECREMENT:
             return {alue: state.value - 1}
+        break;
+        default: 
+            return state;
+        
     }
 }
