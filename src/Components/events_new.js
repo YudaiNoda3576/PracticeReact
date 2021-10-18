@@ -27,7 +27,10 @@ class EventsNew extends Component{
     )
   }
   render(){
-    const {handleSubmit} = this.props
+    // pristine:true if the form data is the same as its initialized values. Opposite of dirty.
+    // submitting:Whether or not your form is currently submitting. 
+    // This prop will only work if you have passed an onSubmit function that returns a promise. It will be true until the promise is resolved or rejected.
+    const {handleSubmit, pristine, submitting} = this.props
     return (
       <form onSubmit={ handleSubmit(this.onSubmit) }>
         <div>
@@ -35,7 +38,8 @@ class EventsNew extends Component{
           <Field label='Body' name='body' type='text' component={ this.renderField }></Field>
 
           <div>
-            <input type='submit' value='Submit' disabled={ false }></input>
+            {/* 初期化時または二重submit対策 */}
+            <input type='submit' value='Submit' disabled={ pristine || submitting}></input>
             <Link to='/'>Cancel</Link>
           </div>
         </div>
